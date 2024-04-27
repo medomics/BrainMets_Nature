@@ -1,0 +1,110 @@
+dicoms:
+  PatientName: TEXT
+  PatientID: TEXT
+  FrameOfReferenceUID: TEXT
+  StudyInstanceUID: TEXT
+  SeriesInstanceUID: TEXT
+  SOPClassUID: TEXT
+  SOPInstanceUID: TEXT UNIQUE
+  SeriesDescription: TEXT
+  StudyDescription: TEXT
+  ReferencedSOPInstanceUID: TEXT
+  Modality: TEXT
+  GeneratedStruct: INTEGER # Boolean
+  StudyDate: INTEGER
+  StudyTime: REAL
+  AcquisitionDate: INTEGER
+  AcquisitionTime: REAL
+  ImagePositionPatient: ARRAY
+  ImageOrientationPatient: ARRAY
+  Institution: TEXT
+  Rows: INTEGER
+  Columns: INTEGER
+  PixelSpacing: ARRAY
+  FilePath: TEXT
+  Institution: TEXT
+  OriginalPatientID: TEXT
+  OriginalSeriesDescription: TEXT
+  OriginalSeriesDate: TEXT
+  StructureNames: NAMELIST
+atlases:
+  Atlas: TEXT UNIQUE
+  AtlasNames: NAMELIST
+clinical:
+  OriginalPatientID: TEXT
+  Instituion: TEXT
+  Gender: TEXT
+  Primary: TEXT
+  Histology: TEXT
+  Subtype: TEXT
+  Immunotherapy: TEXT
+  ImmunotherapyName: TEXT
+  PriorSurgery: TEXT
+statistics:
+  OriginalPatientID: TEXT
+  OriginalSeriesDate: TEXT
+  Institution: TEXT
+  NiftiROI: TEXT
+  NiftiFilePath: TEXT
+  GMtoCentroid: REAL
+  GMtoSurface: REAL
+  Centroid: ARRAY
+  Volume: REAL
+  Sphericity: REAL
+  AtlasExpansion: REAL
+  AtlasUsed: TEXT
+  AtlasOverlap: ARRAY
+  UniqueName: TEXT UNIQUE
+volumes:
+  PatientName: TEXT
+  PatientID: TEXT
+  FrameOfReferenceUID: TEXT
+  StudyInstanceUID: TEXT
+  SeriesInstanceUID: TEXT UNIQUE
+  SOPInstanceUID: TEXT UNIQUE
+  SeriesDescription: TEXT
+  Modality: TEXT
+  StudyDate: INTEGER
+  StudyTime: REAL
+  AcquisitionDate: INTEGER
+  AcquisitionTime: REAL
+  Units: TEXT
+  StructureNames: NAMELIST  # Comma separated structure names
+  OriginalPatientID: TEXT
+  OriginalSeriesDescription: TEXT
+  OriginalSeriesDate: TEXT
+  # AddedStructures: NAMELIST
+  Institution: TEXT
+  MissingSlices: ARRAY # Slices of DICOMs that were missing, or corrupted
+  VolumeDimensions: ARRAY  # Dimensions of the volume
+  VoxelSize: ARRAY
+  CoordinateSystem: ARRAY  # M in Equation C.7.6.2.1-1
+  Transposed: INTEGER
+  FilePath: TEXT
+  NiftiROIs: NAMELIST
+  NiftiFilePaths: NAMELIST
+augmentations:
+  SeriesInstanceUID: TEXT UNIQUE
+  OriginalCoordinateSystem: ARRAY
+  OriginalVolumeDimensions: ARRAY
+  OriginalVoxelSize: ARRAY
+  CurrentCornerInVoxels: ARRAY
+  OriginalDynamicRange: ARRAY
+  Window: FLOAT
+  Level: FLOAT
+  MissingSlices: ARRAY
+  InterpolatedSlices: ARRAY
+  Normalized: INTEGER
+  Standardized: INTEGER
+registrations:
+  SOPInstanceUID: TEXT UNIQUE
+  FrameOfReferenceUID: TEXT
+  TransformationMatrix: ARRAY
+  TransformationType: TEXT
+  TransformationApplied: INTEGER
+  TransformedSeriesUID: TEXT
+  ReferenceInstanceUIDRoot: TEXT
+  ReferenceInstanceUIDTails: NAMELIST
+  AlignedInstanceUIDRoot: TEXT
+  AlignedInstanceUIDTails: NAMELIST
+  AlignedFrameOfReferenceUID: TEXT
