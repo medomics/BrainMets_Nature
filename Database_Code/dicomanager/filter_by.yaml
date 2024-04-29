@@ -1,0 +1,11 @@
+# Filter DICOMs prior to digestion into the database by header tag values
+PatientID: null
+FrameOfReferenceUID: null
+StudyInstanceUID: null
+SeriesInstanceUID: null
+SOPInstanceUID: null
+Modality: null
+StudyDate: null
+SeriesDate: null
+AcquisitionDate: null
+AcquisitionTime: null
