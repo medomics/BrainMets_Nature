@@ -7,7 +7,7 @@ This repository provides the framework to reproduce the main experiments of the 
 
 ## Using this repository
 
-This repository is subdivided into three main high-level experiments:
+This repository is subdivided into thwo main high-level experiments:
 * Figures: section used to illustrate the components of current Figures of the manuscript. 
 * Database_Code: section used to build the multi-institutional database used in "Figures" folder.
 
